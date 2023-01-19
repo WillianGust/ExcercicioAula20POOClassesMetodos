@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Static Template</title>
+  </head>
+  <body>
+    <h1>Funcoes</h1>
+
+    <div>
+      Fazer um programa que pergunte as opcoes para usuario
+      opcao 1 = mostra calculo da tabuada
+      opcao 2 = mostra media dos alunos
+      opcao 3 = sair programa
+      Objetivo e ter um loop onde ira ficar perguntado para usuario
+      ate que ele digite a opcao 3 e sair do programa
+    </div>
+    <script>
+              
+        function valorTabuada(){
+          let tabuada = Number(prompt("Digite um numero da tabuada"));
+          for (a=1;a<=10;a++){
+            document.write(tabuada+"x"+a+"="+(a*tabuada)+"<br />");
+          }
+        }
+        function valorMedia(){
+          quantidade = parseInt(prompt("Digite a quantidade de alunos"))
+          notas = [];
+          for(a = 0; a < quantidade; a ++){
+            nota = parseInt(prompt("Digite a nota do aluno " + ( a + 1 )))
+            notas.push(nota);
+          }
+          somaNotas = notas.reduce((x,y) => x + y);
+          document.write("A media dos alunos e de: " + (somaNotas / notas.length) )
+        }
+
+        opcao = 0
+        while (opcao != 3){
+            opcao = parseInt(prompt("Digite uma das opcoes abaixo: \n1 - Tabuada\n2 - Media\n3 - Sair"));
+            if(opcao == 1){
+              valorTabuada();
+            } 
+            else if(opcao == 2){
+              valorMedia();
+            }
+            else if(opcao != 3){
+              alert("OPCAO INVALIDA");
+            }
+        }
+    </script>
+  </body>
+</html>
